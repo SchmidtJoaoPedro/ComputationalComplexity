@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ComplexidadeAlgoritimos/ComplexidadeAlgoritimos.vcxproj" Id="02a8720e-8c2b-4895-9616-04231e04c804" />
+  <Project Path="Honoi/Honoi.vcxproj" Id="2edd0ec9-1eaa-4fd9-9451-64f9acc5e0c9" />
+</Solution>
