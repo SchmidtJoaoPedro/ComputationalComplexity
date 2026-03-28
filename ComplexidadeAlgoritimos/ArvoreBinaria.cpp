@@ -5,11 +5,10 @@ using namespace std;
 int main(void) {
 	ArvBin T1 = NULL;
 	Tins(&T1, 5);
-	Tins(&T1, 7);
+	Tins(&T1, 8);
 	Tins(&T1, 2);
-	Tins(&T1, 4);
-	Tins(&T1, 0);
-	Tins(&T1, 10);
+	Tins(&T1, 6);
+	Tins(&T1, 1);
 
 	cout << "Em-ordem: ";
 	emordem(T1);
@@ -24,5 +23,10 @@ int main(void) {
 	cout << "Altura: " << alturaArvore(T1);
 	cout << endl;
 	cout << "Maior da Numero: " << maiorNumeroArvore(T1);
+	cout << endl;
+	cout << "Folhas:";
+	folhas(T1);
+	cout << endl;
+	cout << "Soma total:" << soma(T1);
 	cin.get();
 }

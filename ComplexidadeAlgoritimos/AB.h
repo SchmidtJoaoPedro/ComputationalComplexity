@@ -62,8 +62,6 @@ int alturaArvore(ArvBin T) {
     else return 1 + nivelArvore(alturaArvore(T->esq), alturaArvore(T->dir));
 }
 
-
-
 int maiorNumeroArvore(ArvBin T) {
     if (T == NULL) {
         return 0;
@@ -76,5 +74,19 @@ int maiorNumeroArvore(ArvBin T) {
     }
 }
 
+void folhas(ArvBin T) {
+    if (T != NULL) {
+        folhas(T->esq);
+        if (T->esq == NULL && T->dir == NULL) {
+            cout << T->info << ", ";
+        }
+        folhas(T->dir);
+    }
+}
 
-
+int soma(ArvBin T) {
+    if (T == NULL) {
+        return 0;
+    }
+    return T->info + soma(T->esq) + soma(T->dir);
+}
