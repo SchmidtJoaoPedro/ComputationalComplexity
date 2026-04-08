@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void insere(int* V, int X, int N) {
-	while(N > 0 && X < V[N - 1]) {
+	while (N > 0 && X < V[N - 1]) {
 		V[N] = V[N - 1];
 		N--;
 	}
@@ -33,20 +33,43 @@ void selectionsort(int* V, int N) {
 }
 
 void insertionsort(int* V, int N) {
-	for(int i = 1; i < N; i++) {
+	for (int i = 1; i < N; i++) {
 		insere(V, V[i], i);
+	}
+}
+
+void bubblesort(int* V, int N, int* pC, int* pT) {
+	int i, k;
+	while (N > 0) {
+		i = 0;
+		while (i < N - 1) {
+			*pC = *pC + 1; // Contagem de comparações
+			if (V[i] > V[i + 1]) { // Troca
+				k = V[i];
+				V[i] = V[i + 1];
+				V[i + 1] = k;
+				*pT = *pT + 1; // Contagem de trocas
+			}
+			i++;
+		}
+		N--;
 	}
 }
 
 int main()
 {
-	int V[4] = { 50, 30, 60, 40 };
+	int V[6] = { 50, 30, 60, 40, 20, 10};
+	int i, C=0, T=0;
 
-	insertionsort(V, 4);
-	selectionsort(V, 4);
+	//insertionsort(V, 4);
+	//selectionsort(V, 4);
+	bubblesort(V, 6,&C,&T);
 
-	for(int i = 0; i < 4; i++) {
+	for (int i = 0; i < 6; i++) {
 		printf("%d ", V[i]);
 	}
 	printf("\n");
+
+	printf("Comparacoes: %d\n", C);
+	printf("Trocas: %d\n", T);
 }
